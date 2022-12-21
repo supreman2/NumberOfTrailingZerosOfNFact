@@ -8,5 +8,8 @@ public class SolutionTest {
         assertThat(Solution.zeros(0), is(0));
         assertThat(Solution.zeros(6), is(1));
         assertThat(Solution.zeros(14), is(2));
+        assertThat(Solution.zeros(21), is(4));
+        assertThat(Solution.zeros(100), is(24));
+        // assertThat(Solution.zeros(Integer.MAX_VALUE), is(536870902));
     }
 }

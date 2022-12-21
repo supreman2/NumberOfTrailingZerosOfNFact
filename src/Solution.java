@@ -1,21 +1,15 @@
 public class Solution {
     public static int zeros(int n) {
 
-        long fact = 1;
-        for (int i = 2; i <= n; i++) {
-            fact *= i;
-        }
-
         int res = 0;
-        while (true) {
-            if (fact % 10 == 0) {
-                res++;
-                fact = fact / 10;
-            } else {
-                break;
-            }
+
+        // decompose n into prime divisors. how many fives, so many zeros.
+        // first divide by 5, then by 25 (i.e. 5*5), then by 625 (i.e. 5*5*5), etc.
+        for (int i = 5; i <= n; i = i * 5) {
+            res += n / i;
         }
 
         return res;
     }
+
 }
